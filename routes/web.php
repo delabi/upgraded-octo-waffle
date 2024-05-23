@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Artisan;
 use App\Models\Message;
 use App\Models\Post;
 use App\Http\Controllers\JobController;
@@ -18,6 +19,12 @@ Route::view('/', 'home');
 // });
 
 Route::resource('jobs', JobController::class);
+
+Route::get('/run-migration', function(){
+    Artisan::call('optimize:clear');
+    Artisan::call('migrate:refresh --seed');
+    return "Migrations executed successfully";
+});
 
 
 
