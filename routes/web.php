@@ -34,6 +34,12 @@ Route::get('/login', [SessionController::class, 'create']);
 Route::post('/login', [SessionController::class, 'store']);
 Route::post('/logout', [SessionController::class, 'destroy']);
 
+Route::post('/audit', function()
+{
+    //dd("Saving Audit Results");
+    return redirect('/tasks');
+});
+
 Route::view('/about', 'about');
 
 
