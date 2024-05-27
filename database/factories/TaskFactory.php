@@ -17,7 +17,7 @@ class taskFactory extends Factory
     public function definition(): array
     {
         return [
-            'code' => fake()-> random_number(),
+            'code' => fake()->randomNumber(),
             'code_details' => fake()-> paragraph(),
             'discussion' => fake() -> paragraph(),
             'inspection_procedure' => fake() -> paragraph(),
