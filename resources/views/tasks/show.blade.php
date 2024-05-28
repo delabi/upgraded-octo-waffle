@@ -3,15 +3,15 @@
         Task
     </x-slot:heading>
 
-    <h2 class="font-bold text-lg">{{ $task->code }}</h2>
-    <h2 class="font-bold text-lg">{{ $task->code_details }}</h2>
-    <div>
+    <h2 class="m-5 font-bold text-lg">{{ $task->code }} - {{ $task->code_details }}</h2>
+
+    <div class="m-5">
             <strong>Discussion: </strong> {{ $task->discussion }}.
     </div>
-    <div>
+    <div class="m-5">
             <strong>Inspection Procedure: </strong> {{ $task->inspection_procedure }}
     </div>
-    <div>
+    <div class="m-5">
             <strong>Primary Benefit: </strong> {{ $task->primary_benefit }}
         </div>
 
@@ -21,26 +21,22 @@
 
     <form method="POST" action="/audit">
         @csrf
-      <div class="space-y-12 mt-5">
-        <div class="border-b border-gray-900/10 pb-12">
-          <h2 class="text-base font-semibold leading-7 text-gray-900">Record Internal Audit</h2>
-          <p class="mt-1 text-sm leading-6 text-gray-600">Record the results of your internal audit here.</p>
+      <div class="space-y-12 m-5">
+        <div class="border border-gray-500 rounded-lg">
 
-          <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+          <div class="m-5 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
             <x-form-field>
-                <x-form-label for="corrective_action">Corrective Action Status</x-form-label>
+                <x-form-label for="corrective_action">Current Assessment</x-form-label>
 
                 <div class="mt-2">
-                    <input type="radio" name="gender" value="not_applicable"> Not Applicable<br>
-                    <input type="radio" name="gender" value="no-violation"> No Violation<br>
-                    <input type="radio" name="gender" value="fully_corrected"> Fully Corrected<br>
-                    <input type="radio" name="gender" value="partially_corrected"> Partially Corrected<br>
-                    <input type="radio" name="gender" value="not_corrected"> Not Corrected
+                    <input type="radio" name="gender" value="not_applicable"> Compliant<br>
+                    <input type="radio" name="gender" value="no-violation"> Violation found<br>
+                    <input type="radio" name="gender" value="fully_corrected"> Not Applicable<br>
                 </div>
             </x-form-field>
 
             <x-form-field>
-              <x-form-label for="violation">Violation and Corrective Action, if applicable</x-form-label>
+              <x-form-label for="violation">Comments</x-form-label>
 
               <div class="mt-2">
                 <x-form-input id="violation" name="violation" placeholder="..." />
