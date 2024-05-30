@@ -30,9 +30,14 @@
             <div class="ml-10 flex items-baseline space-x-4">
               <x-nav-link href="/" :active="request()->is('/')">Home</x-nav-link>
               {{-- <x-nav-link href="/about" :active="request()->is('about')" >About</x-nav-link> --}}
+              @auth()
               {{-- <x-nav-link href="/jobs" :active="request()->is('jobs')">Jobs</x-nav-link> --}}
-            @auth()
+
               <x-nav-link href="/tasks" :active="request()->is('tasks')">Tasks</x-nav-link>
+              <x-nav-link href="" :active="request()->is('capas')">CAPAs</x-nav-link>
+              <x-nav-link href="" :active="request()->is('incident')">Incidents</x-nav-link>
+              <x-nav-link href="" :active="request()->is('calendar')">Calendar</x-nav-link>
+              <x-nav-link href="" :active="request()->is('reports')">Reports</x-nav-link>
             @endauth
               {{-- <x-nav-link href="/messages" :active="request()->is('messages')">Messages</x-nav-link>
               <x-nav-link href="/posts" :active="request()->is('posts')">Posts</x-nav-link> --}}
