@@ -22,7 +22,7 @@
               <x-nav-link href="/" :active="request()->is('/')">Home</x-nav-link>
               {{-- <x-nav-link href="/about" :active="request()->is('about')" >About</x-nav-link> --}}
               @auth()
-              <x-nav-link href="/jobs" :active="request()->is('jobs')">Jobs</x-nav-link>
+              {{-- <x-nav-link href="/jobs" :active="request()->is('jobs')">Jobs</x-nav-link> --}}
 
               <x-nav-link href="/tasks" :active="request()->is('tasks')">Tasks</x-nav-link>
               <x-nav-link href="/capas" :active="request()->is('capas')">CAPAs</x-nav-link>
