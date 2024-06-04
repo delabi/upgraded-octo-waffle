@@ -2,14 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Task;
 
 class TaskController extends Controller
 {
     public function index()
     {
-        $tasks = Task::latest()->simplePaginate(3); //paginate(3);
+        $tasks = Task::latest()->simplePaginate(10); //paginate(3);
 
         return view('tasks.index', [
             'tasks' => $tasks
@@ -67,11 +66,6 @@ class TaskController extends Controller
             'inspection_procedure' => ['required'],
             'primary_benefit' => ['required']
         ]);
-
-        // authorization(on hold)
-
-
-        // $job = Job::findOrFail($id);
 
         $task->update([
             'code' => request('code'),

@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\User;
 use App\Models\Job;
+use App\Models\Task;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -23,5 +24,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Job::factory(200)->create();
+
+        Task::factory(200)->create();
     }
 }
