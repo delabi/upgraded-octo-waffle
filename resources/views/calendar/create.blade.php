@@ -1,8 +1,8 @@
 <x-layout>
     <x-slot:heading>
-        Create Task
+        Create Calendar Appointment
     </x-slot:heading>
-<form method="POST" action="/tasks">
+<form method="POST" action="/appointments">
     @csrf
   <div class="space-y-12">
     <div class="border-b border-gray-900/10 pb-12">
